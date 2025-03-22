@@ -1,0 +1,536 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kedai Cakruk - Cyber Snacks & Drinks</title>
+  <meta name="description" content="Futuristic snacks and drinks at Kedai Cakruk - where tradition meets cyber aesthetics" />
+  <link rel="stylesheet" href="./src/index.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'cyber-black': '#0F0E17',
+            'cyber-dark': '#1A1A2E',
+            'cyber-blue': '#0A84FF',
+            'cyber-purple': '#8A2BE2',
+            'cyber-green': '#00FF9D',
+            'cyber-pink': '#FF2E63',
+            'cyber-light': '#FFFFFE',
+          },
+          fontFamily: {
+            'sans': ['Rajdhani', 'Inter', 'system-ui', 'sans-serif'],
+            'cyber': ['Orbitron', 'Rajdhani', 'sans-serif'],
+          },
+          boxShadow: {
+            'neon-blue': '0 0 5px #0A84FF, 0 0 20px #0A84FF',
+            'neon-purple': '0 0 5px #8A2BE2, 0 0 20px #8A2BE2',
+            'neon-green': '0 0 5px #00FF9D, 0 0 20px #00FF9D',
+          },
+        },
+      },
+    }
+  </script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+    
+    /* Custom styles that need direct CSS */
+    .text-glow {
+      text-shadow: 0 0 10px #0A84FF, 0 0 20px #0A84FF;
+    }
+    
+    .gradient-text {
+      background: linear-gradient(90deg, #0A84FF, #8A2BE2);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    
+    .cyber-grid-bg {
+      background-image: 
+        radial-gradient(rgba(10, 132, 255, 0.1) 1px, transparent 1px),
+        radial-gradient(rgba(138, 43, 226, 0.1) 1px, transparent 1px);
+      background-size: 50px 50px;
+      background-position: 0 0, 25px 25px;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .float-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes pulse-glow {
+      0%, 100% { box-shadow: 0 0 5px #0A84FF, 0 0 20px #0A84FF; }
+      50% { box-shadow: 0 0 10px #0A84FF, 0 0 30px #0A84FF; }
+    }
+    
+    .pulse-shadow {
+      animation: pulse-glow 3s ease-in-out infinite;
+    }
+  </style>
+</head>
+
+<body class="cyber-grid-bg min-h-screen">
+  <!-- Navbar -->
+  <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 backdrop-blur-md bg-cyber-black/80 border-b border-cyber-blue/30">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <nav class="flex justify-between items-center py-4">
+        <a href="#home" class="font-cyber font-bold text-2xl md:text-3xl text-glow text-cyber-blue">KEDAI CAKRUK</a>
+        
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-button" class="md:hidden text-cyber-light focus:outline-none">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+          </svg>
+        </button>
+        
+        <!-- Desktop menu -->
+        <div class="hidden md:flex space-x-8">
+          <a href="#home" class="nav-link active">Home</a>
+          <a href="#about" class="nav-link">About</a>
+          <a href="#menu" class="nav-link">Menu</a>
+          <a href="#gallery" class="nav-link">Gallery</a>
+          <a href="#contact" class="nav-link">Contact</a>
+        </div>
+      </nav>
+    </div>
+    
+    <!-- Mobile menu (hidden by default) -->
+    <div id="mobile-menu" class="md:hidden hidden bg-cyber-dark/95 backdrop-blur-md border-b border-cyber-blue/30">
+      <div class="flex flex-col space-y-4 px-6 py-6">
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#menu" class="nav-link">Menu</a>
+        <a href="#gallery" class="nav-link">Gallery</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="home" class="relative min-h-screen flex items-center pt-16">
+    <div class="absolute inset-0 z-0 overflow-hidden">
+      <div class="absolute inset-0 bg-cyber-dark/70"></div>
+      <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543?auto=format&fit=crop&q=80" alt="Shop Ambiance" class="w-full h-full object-cover object-center">
+    </div>
+    
+    <div class="cyber-section relative z-10 animate-entry">
+      <div class="max-w-3xl">
+        <h2 class="font-cyber uppercase tracking-wider text-cyber-green mb-2">The Future of Refreshment</h2>
+        <h1 class="text-5xl md:text-6xl lg:text-7xl font-cyber font-bold mb-6">
+          <span class="gradient-text">KEDAI</span>
+          <span class="text-cyber-light">CAKRUK</span>
+        </h1>
+        <p class="text-xl md:text-2xl text-cyber-light/90 mb-8 max-w-2xl">
+          Experience traditional flavors with a cyber-futuristic twist. Where every snack and drink is an upgrade to your system.
+        </p>
+        <a href="#menu" class="cyber-button group">
+          <span class="group-hover:text-cyber-black">VIEW MENU</span>
+        </a>
+      </div>
+    </div>
+    
+    <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+      <a href="#about" class="text-cyber-light/80 hover:text-cyber-blue transition-colors duration-300">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="cyber-section">
+    <div class="flex flex-col lg:flex-row gap-12 items-center">
+      <div class="w-full lg:w-1/2 animate-entry">
+        <h2 class="cyber-title">SYSTEM HISTORY</h2>
+        <div class="space-y-4 text-lg">
+          <p>
+            <span class="text-cyber-blue font-bold">Kedai Cakruk</span> emerged in 2018 as a vision to blend traditional snacks and beverages with futuristic aesthetics. What began as a small roadside stall has transformed into a cyber-hub for food enthusiasts.
+          </p>
+          <p>
+            Our philosophy is simple: <span class="text-cyber-green font-bold">upgrade the ordinary</span>. We take familiar flavors and reimagine them through a cyber lens, creating an experience that's both nostalgic and forward-looking.
+          </p>
+          <p>
+            Each item is crafted with precision and care, ensuring optimal flavor combinations and visual presentation. Our space is designed as an escape from the conventional, a portal where traditional culinary arts meet digital aesthetics.
+          </p>
+        </div>
+        
+        <div class="mt-8 flex flex-col sm:flex-row gap-6">
+          <div class="cyber-card">
+            <div class="text-3xl text-cyber-green font-cyber mb-2">7.5K+</div>
+            <div class="text-cyber-light/80">Satisfied Users</div>
+          </div>
+          <div class="cyber-card">
+            <div class="text-3xl text-cyber-purple font-cyber mb-2">35+</div>
+            <div class="text-cyber-light/80">Unique Items</div>
+          </div>
+          <div class="cyber-card">
+            <div class="text-3xl text-cyber-blue font-cyber mb-2">4.8</div>
+            <div class="text-cyber-light/80">User Rating</div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="w-full lg:w-1/2 flex justify-center">
+        <div class="relative w-full max-w-md">
+          <div class="cyber-card p-0 overflow-hidden pulse-shadow">
+            <img src="https://images.unsplash.com/photo-1525610553991-2bede1a236e2?auto=format&fit=crop&q=80" alt="Kedai Cakruk Shop" class="w-full h-auto">
+          </div>
+          <div class="absolute -bottom-6 -right-6 bg-cyber-dark p-4 border-2 border-cyber-blue rounded-lg shadow-neon-blue">
+            <p class="font-cyber text-cyber-blue font-bold">ESTABLISHED 2018</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Section -->
+  <section id="menu" class="cyber-section">
+    <div class="text-center mb-16 animate-entry">
+      <h2 class="cyber-title">BROWSE INVENTORY</h2>
+      <p class="max-w-2xl mx-auto text-cyber-light/80 text-lg">
+        Select from our premium collection of cyber-enhanced refreshments and snacks, each designed to upgrade your sensory experience.
+      </p>
+    </div>
+    
+    <div class="mb-12">
+      <h3 class="cyber-subtitle">LIQUID REFRESHMENT MODULES</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Menu Item 1 -->
+        <div class="menu-item group">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&q=80" alt="Cyber Coffee" class="menu-item-image">
+          </div>
+          <div class="menu-item-content">
+            <div>
+              <h4 class="menu-item-title">CYBER COFFEE</h4>
+              <p class="menu-item-description">Premium coffee with a neon blue syrup twist, served in a custom LED-lit tumbler.</p>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <span class="menu-item-price">Rp 28.000</span>
+              <button class="bg-cyber-dark px-4 py-1 rounded border border-cyber-blue/50 text-cyber-blue hover:bg-cyber-blue/20 transition-colors duration-300">ADD</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Menu Item 2 -->
+        <div class="menu-item group">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87?auto=format&fit=crop&q=80" alt="Quantum Lemonade" class="menu-item-image">
+          </div>
+          <div class="menu-item-content">
+            <div>
+              <h4 class="menu-item-title">QUANTUM LEMONADE</h4>
+              <p class="menu-item-description">Color-shifting lemonade with butterfly pea flower and a hint of mint.</p>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <span class="menu-item-price">Rp 22.000</span>
+              <button class="bg-cyber-dark px-4 py-1 rounded border border-cyber-blue/50 text-cyber-blue hover:bg-cyber-blue/20 transition-colors duration-300">ADD</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Menu Item 3 -->
+        <div class="menu-item group">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?auto=format&fit=crop&q=80" alt="Neural Network Tea" class="menu-item-image">
+          </div>
+          <div class="menu-item-content">
+            <div>
+              <h4 class="menu-item-title">NEURAL NETWORK TEA</h4>
+              <p class="menu-item-description">Layered milk tea with tapioca pearls and a gradient of sweet flavors.</p>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <span class="menu-item-price">Rp 25.000</span>
+              <button class="bg-cyber-dark px-4 py-1 rounded border border-cyber-blue/50 text-cyber-blue hover:bg-cyber-blue/20 transition-colors duration-300">ADD</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div>
+      <h3 class="cyber-subtitle">SOLID STATE REFUELING UNITS</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Menu Item 4 -->
+        <div class="menu-item group">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1539252554453-80ab65ce3586?auto=format&fit=crop&q=80" alt="Pixel Pastry" class="menu-item-image">
+          </div>
+          <div class="menu-item-content">
+            <div>
+              <h4 class="menu-item-title">PIXEL PASTRY</h4>
+              <p class="menu-item-description">Geometric patterned pastry with sweetened cream and fruit layers.</p>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <span class="menu-item-price">Rp 18.000</span>
+              <button class="bg-cyber-dark px-4 py-1 rounded border border-cyber-blue/50 text-cyber-blue hover:bg-cyber-blue/20 transition-colors duration-300">ADD</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Menu Item 5 -->
+        <div class="menu-item group">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1603532648955-039310d9ed75?auto=format&fit=crop&q=80" alt="Circuit Sandwich" class="menu-item-image">
+          </div>
+          <div class="menu-item-content">
+            <div>
+              <h4 class="menu-item-title">CIRCUIT SANDWICH</h4>
+              <p class="menu-item-description">Layered sandwich arranged in circuit-like patterns with special sauce.</p>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <span class="menu-item-price">Rp 35.000</span>
+              <button class="bg-cyber-dark px-4 py-1 rounded border border-cyber-blue/50 text-cyber-blue hover:bg-cyber-blue/20 transition-colors duration-300">ADD</button>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Menu Item 6 -->
+        <div class="menu-item group">
+          <div class="overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1605333396915-47ffad9b6dcd?auto=format&fit=crop&q=80" alt="Nano Nachos" class="menu-item-image">
+          </div>
+          <div class="menu-item-content">
+            <div>
+              <h4 class="menu-item-title">NANO NACHOS</h4>
+              <p class="menu-item-description">Precision cut nachos with three distinct zones of specialty toppings.</p>
+            </div>
+            <div class="flex justify-between items-center mt-4">
+              <span class="menu-item-price">Rp 40.000</span>
+              <button class="bg-cyber-dark px-4 py-1 rounded border border-cyber-blue/50 text-cyber-blue hover:bg-cyber-blue/20 transition-colors duration-300">ADD</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery Section -->
+  <section id="gallery" class="cyber-section">
+    <div class="text-center mb-16 animate-entry">
+      <h2 class="cyber-title">VISUAL DATABASE</h2>
+      <p class="max-w-2xl mx-auto text-cyber-light/80 text-lg">
+        Explore our digital archives showcasing the Kedai Cakruk experience through high-resolution captures.
+      </p>
+    </div>
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&q=80" alt="Gallery Image 1" class="gallery-image">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80" alt="Gallery Image 2" class="gallery-image">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1513639776629-7b61b0ac49cb?auto=format&fit=crop&q=80" alt="Gallery Image 3" class="gallery-image">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&q=80" alt="Gallery Image 4" class="gallery-image">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?auto=format&fit=crop&q=80" alt="Gallery Image 5" class="gallery-image">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&q=80" alt="Gallery Image 6" class="gallery-image">
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="cyber-section">
+    <div class="text-center mb-16 animate-entry">
+      <h2 class="cyber-title">ESTABLISH CONNECTION</h2>
+      <p class="max-w-2xl mx-auto text-cyber-light/80 text-lg">
+        Interface with our system or visit our physical node to experience Kedai Cakruk in person.
+      </p>
+    </div>
+    
+    <div class="flex flex-col lg:flex-row gap-12">
+      <div class="w-full lg:w-1/2">
+        <div class="cyber-card h-full">
+          <h3 class="cyber-subtitle">CONNECTION DETAILS</h3>
+          <div class="space-y-6 mt-6">
+            <div class="flex items-start space-x-4">
+              <div class="text-cyber-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-cyber font-semibold text-cyber-light">PHYSICAL LOCATION</h4>
+                <p class="text-cyber-light/80">Jalan Cyber Raya No.42, Yogyakarta</p>
+                <p class="text-cyber-light/80">Indonesia, 55281</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="text-cyber-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-cyber font-semibold text-cyber-light">ELECTRONIC MAIL</h4>
+                <p class="text-cyber-light/80">info@kedaicakruk.com</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="text-cyber-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-cyber font-semibold text-cyber-light">COMMUNICATION LINE</h4>
+                <p class="text-cyber-light/80">+62 812 3456 7890 (WhatsApp)</p>
+              </div>
+            </div>
+            
+            <div class="flex items-start space-x-4">
+              <div class="text-cyber-blue">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <div>
+                <h4 class="font-cyber font-semibold text-cyber-light">OPERATIONAL HOURS</h4>
+                <p class="text-cyber-light/80">Monday - Friday: 10:00 - 22:00</p>
+                <p class="text-cyber-light/80">Saturday - Sunday: 12:00 - 24:00</p>
+              </div>
+            </div>
+            
+            <div class="pt-4">
+              <h4 class="font-cyber font-semibold text-cyber-light mb-3">SOCIAL NETWORKS</h4>
+              <div class="flex space-x-4">
+                <a href="#" class="w-10 h-10 rounded-full border border-cyber-blue/50 flex items-center justify-center text-cyber-blue hover:bg-cyber-blue/20 hover:border-cyber-blue transition-colors duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full border border-cyber-blue/50 flex items-center justify-center text-cyber-blue hover:bg-cyber-blue/20 hover:border-cyber-blue transition-colors duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-1.29 2.213-.669 5.108 1.523 6.574-.806-.026-1.566-.247-2.229-.616-.054 2.281 1.581 4.415 3.949 4.89-.693.188-1.452.232-2.224.084.626 1.956 2.444 3.379 4.6 3.419-2.07 1.623-4.678 2.348-7.29 2.04 2.179 1.397 4.768 2.212 7.548 2.212 9.142 0 14.307-7.721 13.995-14.646.962-.695 1.797-1.562 2.457-2.549z"/>
+                  </svg>
+                </a>
+                <a href="#" class="w-10 h-10 rounded-full border border-cyber-blue/50 flex items-center justify-center text-cyber-blue hover:bg-cyber-blue/20 hover:border-cyber-blue transition-colors duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 8h-3v4h3v12h5v-12h3.642l.358-4h-4v-1.667c0-.955.192-1.333 1.115-1.333h2.885v-5h-3.808c-3.596 0-5.192 1.583-5.192 4.615v3.385z"/>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="w-full lg:w-1/2">
+        <div class="cyber-card h-full">
+          <h3 class="cyber-subtitle">TRANSMIT MESSAGE</h3>
+          <form class="space-y-4 mt-6">
+            <div>
+              <label for="name" class="block text-cyber-light mb-2">Identifier (Name)</label>
+              <input type="text" id="name" name="name" class="contact-input" placeholder="Enter your name">
+            </div>
+            <div>
+              <label for="email" class="block text-cyber-light mb-2">Electronic Address</label>
+              <input type="email" id="email" name="email" class="contact-input" placeholder="Enter your email">
+            </div>
+            <div>
+              <label for="message" class="block text-cyber-light mb-2">Data Packet</label>
+              <textarea id="message" name="message" rows="5" class="contact-input" placeholder="Type your message here..."></textarea>
+            </div>
+            <button type="submit" class="cyber-button group w-full">
+              <span class="group-hover:text-cyber-black">TRANSMIT DATA</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Footer -->
+  <footer class="bg-cyber-dark/90 border-t border-cyber-blue/30 py-8 mt-16">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+          <a href="#home" class="font-cyber font-bold text-2xl text-glow text-cyber-blue">KEDAI CAKRUK</a>
+          <p class="text-cyber-light/60 mt-2">Cybernetic refreshments for the digital age</p>
+        </div>
+        <div class="flex flex-col md:flex-row md:space-x-8 space-y-4 md:space-y-0">
+          <a href="#home" class="text-cyber-light/80 hover:text-cyber-blue transition-colors duration-300">Home</a>
+          <a href="#about" class="text-cyber-light/80 hover:text-cyber-blue transition-colors duration-300">About</a>
+          <a href="#menu" class="text-cyber-light/80 hover:text-cyber-blue transition-colors duration-300">Menu</a>
+          <a href="#gallery" class="text-cyber-light/80 hover:text-cyber-blue transition-colors duration-300">Gallery</a>
+          <a href="#contact" class="text-cyber-light/80 hover:text-cyber-blue transition-colors duration-300">Contact</a>
+        </div>
+      </div>
+      <div class="border-t border-cyber-blue/20 mt-8 pt-8 text-center">
+        <p class="text-cyber-light/60">&copy; 2023 Kedai Cakruk. All rights reserved. <span class="text-cyber-blue">Powered by Cyber Systems v1.0</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile Menu Functionality -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      
+      if (mobileMenuButton && mobileMenu) {
+        mobileMenuButton.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+        });
+        
+        // Close mobile menu when clicking on a nav link
+        const mobileNavLinks = mobileMenu.querySelectorAll('a');
+        mobileNavLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            mobileMenu.classList.add('hidden');
+          });
+        });
+      }
+      
+      // Highlight active section in navbar
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.nav-link');
+      
+      function setActiveNavLink() {
+        let currentSection = '';
+        
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.clientHeight;
+          
+          if (window.scrollY >= (sectionTop - 200)) {
+            currentSection = section.getAttribute('id');
+          }
+        });
+        
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${currentSection}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+      
+      window.addEventListener('scroll', setActiveNavLink);
+      setActiveNavLink();
+    });
+  </script>
+
+  <!-- Add the GPT Engineer script -->
+  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+</body>
+</html>

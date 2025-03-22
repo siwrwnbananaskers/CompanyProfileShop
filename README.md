@@ -55,3 +55,8 @@ Company Profile Shop/
 ## Lisensi
 Proyek ini menggunakan lisensi [MIT](LICENSE).
 
+![1](https://github.com/user-attachments/assets/c005d1a6-8ace-4dd9-91e8-bad86a2c0ee0)
+![5](https://github.com/user-attachments/assets/55e003f2-ebb2-46c2-ac70-8076bc10feb4)
+![4](https://github.com/user-attachments/assets/3ebd7b6f-9ab4-4d8f-91ec-96010aefa509)
+![3](https://github.com/user-attachments/assets/816f26b5-b8dd-4e07-8c72-5f80be4f3b2f)
+![2](https://github.com/user-attachments/assets/b8161b94-d8ef-41ad-8546-ebd1f0bce863)
